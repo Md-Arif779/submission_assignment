@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container col-md-4 offset-4 mt-5">
+    <form action="" class="form-gourp" method="post">
+        {% csrf_token %}
+        <h3 class="text-center"> Login Form </h3><hr><br>
+        <input type="text" class="form-control" name="username" id="" placeholder="Enter your username"><br>
+        <input type="password" class="form-control" name="password" id="" placeholder="Enter your password"><br>
+        <input type="submit" class="btn btn-info w-100" value="Login">
+        <span>Don't have an Account ? <a href="{% url 'register' %}">Signup</a></span><br>
+        <span>Forgot Password ? <a href="{% url 'reset_password' %}">Signup</a></span>
+
+    </form>
+    {% endblock %}

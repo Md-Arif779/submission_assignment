@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <div class="album py-5 bg-light">
+        <div class="container">
+    
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for item in data %}
+            <div class="col">
+              <div class="card shadow-sm">
+                <img style="width:100%;height: 300px;" src="{{ item.image.url }}" alt="">
+                <h4 class="content-center">BDT-{{ item.price }}</h4>
+                <div class="card-body">
+                  <h3>{{ item.title}}</h3>
+                    <p class="card-text">{{ item.desc }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Add Cart</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                    <small class="text-muted">{{ item.datetime }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+           {% endfor %}
+    
+    </main>
+
+
+{% endblock %}
